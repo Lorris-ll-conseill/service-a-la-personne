@@ -3,39 +3,509 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Service à la Personne</title>
-    <link rel="stylesheet" href="../public/css/style.css" />
+    <meta
+      name="description"
+      content="Découvrez nos services d'aide à domicile pour personnes âgées, ménage, préparation de repas et assistance administrative"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Nos Services - Harmonie Services</title>
   </head>
   <body>
-    <header>
-      <h1>Nos Services</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="menage.html">Ménage</a></li>
-          <li><a href="repas.html">Repas</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+    <header class="header">
+      <div class="container header-container">
+        <a href="/" class="logo">
+          <i class="fas fa-hands-helping"></i>
+          <span>Harmonie Services</span>
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="/" class="nav-link">Accueil</a></li>
+            <li><a href="/services" class="nav-link">Nos Services</a></li>
+            <li><a href="/menage" class="nav-link">Ménage</a></li>
+            <li><a href="/repas" class="nav-link">Repas</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <main>
-      <section>
-        <h2>Services Offerts</h2>
-        <p>
-          Nous proposons une gamme de services pour vous aider dans votre
-          quotidien :
+
+    <section
+      class="hero"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url('https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+      "
+    >
+      <div class="container hero-content">
+        <h1 class="hero-title">Nos services d'accompagnement</h1>
+        <p class="hero-subtitle">
+          Des solutions adaptées à tous vos besoins d'aide à domicile
         </p>
-        <ul>
-          <li>Ménage</li>
-          <li>Préparation de repas</li>
-          <li>Accompagnement pour les courses</li>
-          <li>Assistance administrative</li>
-          <li>Et bien plus encore...</li>
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 Service à la Personne. Tous droits réservés.</p>
+        <div class="hero-buttons">
+          <a href="#services-list" class="btn btn-secondary btn-lg"
+            >Découvrir nos services</a
+          >
+          <a href="/contact" class="btn btn-outline-light btn-lg"
+            >Demander un devis</a
+          >
+        </div>
+      </div>
+      <a href="#services-list" class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <section id="services-list" class="services-list">
+      <div class="container">
+        <div class="section-title">
+          <h2>Une gamme complète de services</h2>
+        </div>
+
+        <div class="services-category reveal">
+          <h3>
+            <i class="fas fa-user-friends"></i> Services pour personnes âgées
+          </h3>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Aide à la vie quotidienne"
+                />
+              </div>
+              <div class="service-content">
+                <h4 id="seniors">Aide à la vie quotidienne</h4>
+                <p>
+                  Assistance pour les gestes du quotidien : lever, coucher,
+                  habillage, toilette non médicalisée, aide aux repas.
+                </p>
+                <ul class="service-features">
+                  <li>Présence 7j/7 possible</li>
+                  <li>Personnel formé à la gérontologie</li>
+                  <li>Suivi personnalisé</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Accompagnement mobilité"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Accompagnement mobilité</h4>
+                <p>
+                  Transport et accompagnement pour vos sorties : rendez-vous
+                  médicaux, courses, promenades, activités sociales.
+                </p>
+                <ul class="service-features">
+                  <li>Véhicules adaptés</li>
+                  <li>Accompagnement personnalisé</li>
+                  <li>Aide aux démarches extérieures</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1577368211130-4bbd0181daa8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Surveillance jour/nuit"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Présence jour/nuit</h4>
+                <p>
+                  Présence rassurante et surveillance pour prévenir les risques
+                  et assurer la sécurité de vos proches.
+                </p>
+                <ul class="service-features">
+                  <li>Présence de jour ou de nuit</li>
+                  <li>Garde-malade</li>
+                  <li>Solution de répit pour aidants</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-category reveal">
+          <h3><i class="fas fa-home"></i> Services pour la maison</h3>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Ménage et repassage"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Ménage et repassage</h4>
+                <p>
+                  Entretien régulier ou ponctuel de votre domicile, repassage et
+                  entretien du linge.
+                </p>
+                <ul class="service-features">
+                  <li>Prestations régulières ou ponctuelles</li>
+                  <li>Personnel qualifié</li>
+                  <li>Produits écologiques disponibles</li>
+                </ul>
+                <a href="menage.html" class="btn btn-outline-primary btn-sm"
+                  >En savoir plus</a
+                >
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1601647998485-8bec778fe188?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Courses et livraison"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Courses et livraison</h4>
+                <p>
+                  Accompagnement pour faire vos courses ou service de courses à
+                  votre place avec livraison à domicile.
+                </p>
+                <ul class="service-features">
+                  <li>Liste de courses personnalisée</li>
+                  <li>Livraison et rangement</li>
+                  <li>Contrôle des dates de péremption</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Petit bricolage et jardinage"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Petit bricolage et jardinage</h4>
+                <p>
+                  Interventions pour l'entretien de votre jardin et petits
+                  travaux de bricolage à domicile.
+                </p>
+                <ul class="service-features">
+                  <li>Tonte de pelouse et taille de haies</li>
+                  <li>Petites réparations</li>
+                  <li>Montage de meubles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-category reveal">
+          <h3><i class="fas fa-utensils"></i> Services de repas</h3>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Préparation de repas"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Préparation de repas</h4>
+                <p>
+                  Préparation de repas à votre domicile, adaptés à vos goûts et
+                  besoins nutritionnels.
+                </p>
+                <ul class="service-features">
+                  <li>Menus personnalisés</li>
+                  <li>Respect des régimes spécifiques</li>
+                  <li>Courses et préparation</li>
+                </ul>
+                <a href="repas.html" class="btn btn-outline-primary btn-sm"
+                  >En savoir plus</a
+                >
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1607877742574-2da282b2c18d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Livraison de repas"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Livraison de repas</h4>
+                <p>
+                  Service de portage de repas à domicile, avec des menus variés
+                  et équilibrés.
+                </p>
+                <ul class="service-features">
+                  <li>Livraison 7j/7 possible</li>
+                  <li>Repas chauds ou à réchauffer</li>
+                  <li>Menus adaptés aux seniors</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-category reveal">
+          <h3><i class="fas fa-file-alt"></i> Services administratifs</h3>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Assistance administrative"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Assistance administrative</h4>
+                <p>
+                  Aide pour la gestion du courrier, les démarches
+                  administratives et le classement des documents.
+                </p>
+                <ul class="service-features">
+                  <li>Aide à la rédaction de courriers</li>
+                  <li>Suivi des dossiers</li>
+                  <li>Classement et organisation</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-image">
+                <img
+                  src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+                  alt="Information sur les aides"
+                />
+              </div>
+              <div class="service-content">
+                <h4>Information sur les aides</h4>
+                <p>
+                  Conseils et accompagnement pour l'obtention d'aides
+                  financières (APA, PCH, crédits d'impôt...).
+                </p>
+                <ul class="service-features">
+                  <li>Évaluation des droits</li>
+                  <li>Constitution des dossiers</li>
+                  <li>Suivi des demandes</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-title">
+          <h2>Les avantages de nos services</h2>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card reveal">
+            <div class="benefit-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Maintien à domicile</h3>
+              <p>
+                Nos services permettent aux personnes âgées ou en perte
+                d'autonomie de continuer à vivre dans leur environnement
+                familier, en toute sécurité.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-card reveal">
+            <div class="benefit-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Personnel qualifié</h3>
+              <p>
+                Tous nos intervenants sont recrutés avec soin, formés
+                régulièrement et supervisés par un responsable de secteur.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-card reveal">
+            <div class="benefit-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Avantages fiscaux</h3>
+              <p>
+                Bénéficiez d'un crédit d'impôt de 50% sur les sommes versées
+                pour nos services à la personne, conformément à la législation
+                en vigueur.
+              </p>
+            </div>
+          </div>
+
+          <div class="benefit-card reveal">
+            <div class="benefit-icon">
+              <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h3>Répit pour les aidants</h3>
+              <p>
+                Nos services offrent un temps de repos aux proches aidants, leur
+                permettant de prendre soin d'eux-mêmes tout en assurant le
+                bien-être de leur parent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="financement">
+      <div class="container">
+        <div class="section-title">
+          <h2>Financement et aides disponibles</h2>
+        </div>
+
+        <div class="financement-content reveal">
+          <div class="financement-text">
+            <p>
+              Différentes aides peuvent contribuer au financement de nos
+              services selon votre situation :
+            </p>
+
+            <div class="aide-cards">
+              <div class="aide-card">
+                <h3>APA</h3>
+                <p>
+                  L'Allocation Personnalisée d'Autonomie, destinée aux personnes
+                  âgées en perte d'autonomie
+                </p>
+              </div>
+
+              <div class="aide-card">
+                <h3>PCH</h3>
+                <p>
+                  La Prestation de Compensation du Handicap, pour les personnes
+                  en situation de handicap
+                </p>
+              </div>
+
+              <div class="aide-card">
+                <h3>Caisses de retraite</h3>
+                <p>
+                  Aides financières proposées par les caisses de retraite pour
+                  leurs adhérents
+                </p>
+              </div>
+
+              <div class="aide-card">
+                <h3>Mutuelles</h3>
+                <p>
+                  Certaines mutuelles proposent des prises en charge pour les
+                  services d'aide à domicile
+                </p>
+              </div>
+            </div>
+
+            <p class="financement-note">
+              Notre équipe vous accompagne dans toutes vos démarches pour
+              l'obtention de ces aides et vous propose un plan de financement
+              adapté à votre situation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-content">
+        <h2 class="cta-title">Besoin d'un service sur mesure ?</h2>
+        <p class="cta-text">
+          Contactez-nous pour une évaluation gratuite de vos besoins et un devis
+          personnalisé.
+        </p>
+        <a href="contact.html" class="btn btn-secondary btn-lg"
+          >Demander un devis</a
+        >
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3 class="footer-title">Harmonie Services</h3>
+          <p>
+            Services à la personne de qualité, adaptés à vos besoins et à ceux
+            de vos proches.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Nos services</h3>
+          <ul class="footer-nav">
+            <li><a href="/services">Aide aux seniors</a></li>
+            <li><a href="/menage">Ménage à domicile</a></li>
+            <li><a href="/repas">Préparation de repas</a></li>
+            <li><a href="/services">Garde d'enfants</a></li>
+            <li><a href="/services">Assistance administrative</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Informations</h3>
+          <ul class="footer-nav">
+            <li><a href="#">À propos de nous</a></li>
+            <li><a href="#">Tarifs et financement</a></li>
+            <li><a href="#">Recrutement</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Contact</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 rue de la Bienveillance,
+            75011 Paris
+          </p>
+          <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+          <p><i class="fas fa-envelope"></i> contact@harmonieservices.fr</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Harmonie Services. Tous droits réservés.</p>
+      </div>
     </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
   </body>
 </html>
