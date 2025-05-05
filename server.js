@@ -2,43 +2,41 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3002; // Changement du port à 3002
+const PORT = process.env.PORT || 3002;
 
 // Middleware pour parser les requêtes JSON et formulaires
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, "public")));
+// Check if we're in production mode
+const isProduction = process.env.NODE_ENV === "production";
 
-// Define routes for the different views
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "index.html"));
-});
+if (isProduction) {
+  // In production, serve the built Vue app from the dist directory
+  app.use(express.static(path.join(__dirname, "dist")));
+} else {
+  // In development, serve static files from the public directory
+  app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/services", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "services.html"));
-});
+  // Define routes for the different views in development mode
+  const devRoutes = [
+    "/",
+    "/services",
+    "/menage",
+    "/repas",
+    "/contact",
+    "/faq",
+    "/responsive-test",
+  ];
 
-app.get("/menage", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "menage.html"));
-});
-
-app.get("/repas", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "repas.html"));
-});
-
-app.get("/contact", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "contact.html"));
-});
-
-app.get("/faq", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "faq.html"));
-});
-
-app.get("/responsive-test", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "responsive-test.html"));
-});
+  devRoutes.forEach((route) => {
+    app.get(route, (req, res) => {
+      const fileName =
+        route === "/" ? "index.html" : `${route.substring(1)}.html`;
+      res.sendFile(path.join(__dirname, "views", fileName));
+    });
+  });
+}
 
 // API pour gérer les soumissions de formulaire
 app.post("/api/contact", (req, res) => {
@@ -118,6 +116,7 @@ app.post("/api/callback", (req, res) => {
     const request = {
       id: Date.now().toString(),
       timestamp: new Date().toISOString(),
+      status: "pending",
       ...callbackData,
     };
 
@@ -146,9 +145,97 @@ app.post("/api/callback", (req, res) => {
   }
 });
 
+// API pour l'interface d'administration
+// Récupérer toutes les demandes de contact
+app.get("/api/admin/contacts", (req, res) => {
+  try {
+    const contacts = global.contactSubmissions || [];
+    res.status(200).json({
+      success: true,
+      contacts: contacts,
+    });
+  } catch (error) {
+    console.error("Erreur lors de la récupération des contacts:", error);
+    res.status(500).json({
+      success: false,
+      message: "Une erreur est survenue lors de la récupération des contacts.",
+    });
+  }
+});
+
+// Récupérer toutes les demandes de rappel
+app.get("/api/admin/callbacks", (req, res) => {
+  try {
+    const callbacks = global.callbackRequests || [];
+    res.status(200).json({
+      success: true,
+      callbacks: callbacks,
+    });
+  } catch (error) {
+    console.error(
+      "Erreur lors de la récupération des demandes de rappel:",
+      error
+    );
+    res.status(500).json({
+      success: false,
+      message:
+        "Une erreur est survenue lors de la récupération des demandes de rappel.",
+    });
+  }
+});
+
+// Mettre à jour le statut d'une demande de rappel
+app.put("/api/admin/callbacks/:id", (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!global.callbackRequests) {
+      return res.status(404).json({
+        success: false,
+        message: "Aucune demande de rappel trouvée.",
+      });
+    }
+
+    const callbackIndex = global.callbackRequests.findIndex(
+      (cb) => cb.id === id
+    );
+
+    if (callbackIndex === -1) {
+      return res.status(404).json({
+        success: false,
+        message: "Demande de rappel non trouvée.",
+      });
+    }
+
+    global.callbackRequests[callbackIndex].status = status;
+
+    res.status(200).json({
+      success: true,
+      message: "Statut mis à jour avec succès.",
+      callback: global.callbackRequests[callbackIndex],
+    });
+  } catch (error) {
+    console.error("Erreur lors de la mise à jour du statut:", error);
+    res.status(500).json({
+      success: false,
+      message: "Une erreur est survenue lors de la mise à jour du statut.",
+    });
+  }
+});
+
+// In production, handle all other routes by serving the index.html (for Vue Router)
+if (isProduction) {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "dist", "index.html"));
+  });
+}
+
 // Start the server
 app.listen(PORT, () => {
   console.log(
     `Le serveur Harmonie Services est en cours d'exécution sur http://localhost:${PORT}`
   );
+  console.log(`Mode: ${isProduction ? "Production" : "Développement"}`);
+  console.log("Server started successfully");
 });
