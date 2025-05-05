@@ -49,6 +49,7 @@ export default {
         { name: "Ménage", path: "/menage" },
         { name: "Repas", path: "/repas" },
         { name: "FAQ", path: "/faq" },
+        { name: "Assistant IA", path: "/assistant" },
       ],
     };
   },

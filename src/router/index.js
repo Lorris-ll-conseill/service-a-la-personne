@@ -9,6 +9,7 @@ import ContactView from "../views/ContactView.vue";
 import FaqView from "../views/FaqView.vue";
 import ResponsiveTestView from "../views/ResponsiveTestView.vue";
 import AdminView from "../views/AdminView.vue";
+import AiAssistantView from "../views/AiAssistantView.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -53,6 +54,11 @@ const router = createRouter({
       name: "admin",
       component: AdminView,
       meta: { requiresAuth: true }, // This could be used to add auth guard in the future
+    },
+    {
+      path: "/assistant",
+      name: "ai-assistant",
+      component: AiAssistantView,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
