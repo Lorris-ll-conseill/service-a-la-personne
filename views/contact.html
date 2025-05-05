@@ -3,40 +3,447 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contactez Harmonie Services pour tous vos besoins d'aide à domicile, ménage, repas et accompagnement de personnes âgées"
+    />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Contact - Service à la Personne</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/forms.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Contact - Harmonie Services</title>
   </head>
   <body>
-    <header>
-      <h1>Contactez-nous</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="menage.html">Ménage</a></li>
-          <li><a href="repas.html">Repas</a></li>
-        </ul>
-      </nav>
+    <header class="header">
+      <div class="container header-container">
+        <a href="/" class="logo">
+          <i class="fas fa-hands-helping"></i>
+          <span>Harmonie Services</span>
+        </a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="/" class="nav-link">Accueil</a></li>
+            <li><a href="/services" class="nav-link">Nos Services</a></li>
+            <li><a href="/menage" class="nav-link">Ménage</a></li>
+            <li><a href="/repas" class="nav-link">Repas</a></li>
+            <li><a href="/contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-    <main>
-      <section>
-        <h2>Nous contacter</h2>
-        <form action="#" method="post">
-          <label for="name">Nom:</label>
-          <input type="text" id="name" name="name" required />
 
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+    <section
+      class="hero contact-hero"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url('https://images.unsplash.com/photo-1560264280-88b68371db39?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+      "
+    >
+      <div class="container hero-content">
+        <h1 class="hero-title">Contactez-nous</h1>
+        <p class="hero-subtitle">
+          Notre équipe est à votre écoute pour répondre à toutes vos questions
+        </p>
+      </div>
+      <a href="#contact-section" class="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </section>
 
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+    <section id="contact-section" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Comment pouvons-nous vous aider ?</h2>
+        </div>
 
-          <button type="submit">Envoyer</button>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; 2023 Service à la Personne. Tous droits réservés.</p>
+        <div class="contact-content">
+          <div class="contact-info reveal animate-fade-in-left">
+            <h3>Nos coordonnées</h3>
+
+            <div class="contact-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="contact-info-details">
+                <div class="contact-info-label">Adresse</div>
+                <p>123 rue de la Bienveillance<br />75011 Paris</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fas fa-phone-alt"></i>
+              <div class="contact-info-details">
+                <div class="contact-info-label">Téléphone</div>
+                <p>
+                  01 23 45 67 89<br />Du lundi au vendredi : 8h-19h<br />Samedi
+                  : 9h-17h
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <div class="contact-info-details">
+                <div class="contact-info-label">Email</div>
+                <p>
+                  contact@harmonieservices.fr<br />devis@harmonieservices.fr
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fas fa-clock"></i>
+              <div class="contact-info-details">
+                <div class="contact-info-label">Horaires d'intervention</div>
+                <p>7j/7, de 7h à 21h<br />Service d'urgence 24h/24</p>
+              </div>
+            </div>
+
+            <div class="contact-social">
+              <h4>Suivez-nous</h4>
+              <div class="social-links">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-map reveal animate-fade-in-right">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21000.481482446743!2d2.369598187227086!3d48.8588089775391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d0f1b51759b%3A0x167f5a62ae3c30f0!2s11th%20arrondissement%20of%20Paris%2C%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1651156565526!5m2!1sen!2sus"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="contact-form-section reveal">
+          <div class="contact-form">
+            <h3>Demande d'information ou de devis</h3>
+            <p class="form-intro">
+              Remplissez ce formulaire pour nous faire part de votre demande. Un
+              conseiller vous recontactera sous 24h.
+            </p>
+
+            <form
+              id="contactForm"
+              action="/api/contact"
+              method="post"
+              class="contact-form"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name" class="form-label">Nom et prénom*</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">Téléphone*</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email" class="form-label">Email*</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="zip" class="form-label">Code postal*</label>
+                  <input
+                    type="text"
+                    id="zip"
+                    name="zip"
+                    class="form-control"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="service" class="form-label"
+                  >Service souhaité*</label
+                >
+                <select
+                  id="service"
+                  name="service"
+                  class="form-control"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Sélectionnez un service
+                  </option>
+                  <option value="seniors">Aide aux seniors</option>
+                  <option value="menage">Ménage à domicile</option>
+                  <option value="repas">Préparation de repas</option>
+                  <option value="administratif">
+                    Assistance administrative
+                  </option>
+                  <option value="autre">Autre (précisez)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">Votre message*</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="form-group form-check">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  class="form-check-input"
+                  required
+                />
+                <label for="privacy" class="form-check-label"
+                  >J'accepte que mes données soient traitées pour la gestion de
+                  ma demande conformément à la politique de
+                  confidentialité.*</label
+                >
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">
+                  Envoyer ma demande
+                </button>
+              </div>
+
+              <p class="form-note">* Champs obligatoires</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="emergency">
+      <div class="container">
+        <div class="emergency-content">
+          <div class="emergency-icon">
+            <i class="fas fa-exclamation-circle"></i>
+          </div>
+          <div class="emergency-text">
+            <h3>Service d'urgence</h3>
+            <p>
+              Besoin d'une intervention rapide ? Notre équipe d'urgence est
+              disponible 24h/24 et 7j/7.
+            </p>
+            <a href="tel:0123456789" class="btn btn-secondary"
+              >Appeler le 01 23 45 67 89</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agences">
+      <div class="container">
+        <div class="section-title">
+          <h2>Nos agences</h2>
+        </div>
+
+        <div class="agences-grid reveal">
+          <div class="agence-card">
+            <div class="agence-header">
+              <h3>Paris Nord</h3>
+            </div>
+            <div class="agence-content">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 123 rue de la
+                Bienveillance, 75011 Paris
+              </p>
+              <p><i class="fas fa-phone-alt"></i> 01 23 45 67 89</p>
+              <p><i class="fas fa-envelope"></i> paris@harmonieservices.fr</p>
+            </div>
+          </div>
+
+          <div class="agence-card">
+            <div class="agence-header">
+              <h3>Paris Sud</h3>
+            </div>
+            <div class="agence-content">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 45 avenue du Général
+                Leclerc, 75014 Paris
+              </p>
+              <p><i class="fas fa-phone-alt"></i> 01 23 45 67 90</p>
+              <p>
+                <i class="fas fa-envelope"></i> parissud@harmonieservices.fr
+              </p>
+            </div>
+          </div>
+
+          <div class="agence-card">
+            <div class="agence-header">
+              <h3>Boulogne-Billancourt</h3>
+            </div>
+            <div class="agence-content">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> 78 rue du Point du Jour,
+                92100 Boulogne
+              </p>
+              <p><i class="fas fa-phone-alt"></i> 01 23 45 67 91</p>
+              <p>
+                <i class="fas fa-envelope"></i> boulogne@harmonieservices.fr
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="callback">
+      <div class="container">
+        <div class="callback-content">
+          <div class="callback-text">
+            <h3>Vous préférez qu'on vous rappelle ?</h3>
+            <p>
+              Laissez-nous votre numéro et nos conseillers vous contacteront à
+              l'horaire qui vous convient.
+            </p>
+          </div>
+          <form
+            id="callbackForm"
+            class="callback-form"
+            action="/api/callback"
+            method="post"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="callback-phone"
+                  name="callback-phone"
+                  class="form-control"
+                  placeholder="Votre numéro de téléphone"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <select
+                  id="callback-time"
+                  name="callback-time"
+                  class="form-control"
+                  required
+                >
+                  <option value="" selected disabled>
+                    Quand vous rappeler ?
+                  </option>
+                  <option value="morning">Matin (9h-12h)</option>
+                  <option value="afternoon">Après-midi (14h-17h)</option>
+                  <option value="evening">Soir (17h-19h)</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-secondary">
+                Me rappeler
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <div class="footer-col">
+          <h3 class="footer-title">Harmonie Services</h3>
+          <p>
+            Services à la personne de qualité, adaptés à vos besoins et à ceux
+            de vos proches.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Nos services</h3>
+          <ul class="footer-nav">
+            <li><a href="/services">Aide aux seniors</a></li>
+            <li><a href="/menage">Ménage à domicile</a></li>
+            <li><a href="/repas">Préparation de repas</a></li>
+            <li><a href="/services">Garde d'enfants</a></li>
+            <li><a href="/services">Assistance administrative</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Informations</h3>
+          <ul class="footer-nav">
+            <li><a href="#">À propos de nous</a></li>
+            <li><a href="#">Tarifs et financement</a></li>
+            <li><a href="#">Recrutement</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="#">Mentions légales</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3 class="footer-title">Contact</h3>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 rue de la Bienveillance,
+            75011 Paris
+          </p>
+          <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+          <p><i class="fas fa-envelope"></i> contact@harmonieservices.fr</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Harmonie Services. Tous droits réservés.</p>
+      </div>
     </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/forms.js"></script>
   </body>
 </html>
